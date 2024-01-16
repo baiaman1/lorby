@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:lorby/components/button.dart';
 import 'package:lorby/components/text_field.dart';
@@ -24,42 +26,61 @@ class _LoginPageState extends State<LoginPage> {
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: [
-            const SizedBox(height: 50),
+            const SizedBox(height: 30),
             //logox
-            Icon(Icons.message, size: 50,),
-            const SizedBox(height: 50),
-            //  WelcomeBack
+            Image.asset(
+              'assets/login.png',
+              width: 200.0,
+              height: 200.0,
+            ),
+            const SizedBox(height: 20),
+
+            // text welcome
             Text(
-              'Welcome Back!',
+              'Вэлком бэк!', 
               style: TextStyle(
-                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+
               ),
             ),
-            const SizedBox(height: 50),
+            const SizedBox(height: 40),
 
             // email
             MyTextField(
               controller: emailController, 
-              hintText: 'email', 
+              hintText: 'Введи логин', 
               obscureText: false
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 13),
 
             // password
             MyTextField(
               controller: passwordController, 
-              hintText: 'password', 
+              hintText: 'Введи пароль', 
               obscureText: true
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 25),
             
             // sub button
             Button(
               onTap: (){}, 
               text: 'Войти',
             ),
+            const SizedBox(height: 40),
 
             // register now
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Уменя еще нет аккаунта',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold
+                  ),
+                )
+              ],
+            )
             
           ],
         ),
